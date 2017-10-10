@@ -1,7 +1,7 @@
 {
     "additional_trust_anchors": [],
-    "app_name": "ДРОН-Блок",
-    "author": "Yudin Maxim (yudin.mn@mail.ru)",
+    "app_name": "dronBlock",
+    "author": "Artech (artech.vn@ya.ru)",
     "dependencies": {
         "google-closure-compiler-js": "^20161201.0.0",
         "json5": "^0.5.0",
@@ -13,7 +13,7 @@
         "example": "examples"
     },
     "main": "index_gen.html",
-    "name": "ArtechIDE",
+    "name": "dronBlock",
     "nodejs": true,
     "version": "2.3.8",
     "webexe_settings": {
@@ -39,11 +39,11 @@
         "frame": true,
         "height": 640,
         "icon": "LOGO_ONLY.png",
-        "id": "artechide",
+        "id": "dronblock",
         "resizable": true,
         "show": true,
         "show_in_taskbar": true,
-        "title": "Artech IDE",
+        "title": "dronBlock",
         "visible": true,
         "width": 800
     }

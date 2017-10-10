@@ -105,7 +105,7 @@
         function newProject()
         {
             // создание нового проекта
-            if(confirm('Выs уверены, что хотите создать новый проект?\nТекущий проект будет заменён.'))
+            if(confirm('Вы уверены, что хотите создать новый проект?\nТекущий проект будет заменён.'))
             {
                 // затираем в памяти текущий проект
                 HTML_clearAutoSave();
@@ -151,13 +151,15 @@
         <div id="topToolbar" align="left">
 			<ul class="topmenu">
 				<li>
-					<button class="myButton" id="FILE">
+					<button class="myButton" id="file">
 						<img src="img/toolbox_newfile.png">
+						Файл
 					</button>
 					<ul class="submenu">
 						<li>
-							<button class="myButton" onclick="newProject()" id="NEW_PROJECT">
+							<button class="myButton" onclick="newProject()">
 								<img src="img/toolbox_newfile.png">
+								Новый проект
 							</button>						
 						</li>
 						<li>
@@ -378,8 +380,8 @@
                         Набор Arduino
                     </button>
                     <button type="button" class="myButton" onclick="artProject()">
-                        <img src="img/Architechnica.jpg" style="vertical-align: middle;width: 128px; height: 128px;">
-                        Конструктор Архитехника
+                        <img src="img/dronblock.jpg" style="vertical-align: middle;width: 128px; height: 128px;">
+                        Набор dronBlock
                     </button>
                 </td>
             </tr>
@@ -444,7 +446,7 @@
                 </td>
                 <td>
                     <select id="board_select">
-                        <option value="art10">Архитехника v1.0</option>
+                        <option value="art10">DRON v1.0</option>
                         <option value="nano328">Arduino Nano (328)</option>
                         <option value="UNO">Arduino UNO</option>
                     </select>
@@ -1081,7 +1083,7 @@
 				<sep></sep>
 
 
-				<category name="Архитехника" colour="20">
+				<category name="DRON" colour="20">
 			<block type="artboard"></block>
 
 			<block type="art_system_led"></block>
@@ -1132,9 +1134,7 @@
 			</block>
 		</category>
     </xml>
-<script src="js\lang.js"></script>
 <script src="js\align.js"></script>
-
 </body>
 
 </html>
