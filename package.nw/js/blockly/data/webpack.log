@@ -138,3 +138,10 @@ Time: 9828ms
 union.min.js  85.8 kB       0  [emitted]  main
    [0] multi main 28 bytes {0} [built]
    [1] ./union.js 129 kB {0} [built]
+Hash: 7ae21462bae669f53bdc
+Version: webpack 1.14.0
+Time: 10528ms
+       Asset     Size  Chunks             Chunk Names
+union.min.js  85.8 kB       0  [emitted]  main
+   [0] multi main 28 bytes {0} [built]
+   [1] ./union.js 132 kB {0} [built]
