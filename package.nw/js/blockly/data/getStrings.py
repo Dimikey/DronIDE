@@ -1,9 +1,18 @@
 import re
 import os
 
+# ["'][А-Яа-я\s\\n\.(),1-9]*["']
+
+# pattern1 = """['][А-Яа-я\\s\\\n\\.(),1-9"]*[']"""
+# pattern2 = """["][А-Яа-я\\s\\\n\\.(),1-9']*["]"""
+
+pattern1 = "['][^']*[']"
+pattern2 = '["][^"]*["]'
+
 strings = {}
-pattern = """["'][а-яА-Я\s\\\]+["'][а-яА-Я\s\\\]*["']*"""
-print(pattern)
+# pattern = """["'][а-яА-Я\s\\\]+["'][а-яА-Я\s\\\]*["']*"""
+print(pattern1)
+print(pattern2)
 out = open("out.txt", 'wb')
 
 
@@ -15,9 +24,20 @@ def func(dir):
         elif os.path.splitext(file_path)[1] == ".js":
             res = open(file_path, "r", encoding="utf8").read()
             # print(res)
-            result = re.findall(pattern, res)
-            if len(result):
-                strings[file_path] = result
+            result1 = re.findall(pattern1, res)
+            result2 = re.findall(pattern2, res)
+            result = result1 + result2
+            # print(result)
+            list = []
+            for i in result:
+                if re.search("[А-Яа-я]", i):
+                    # print("--------------------------------------")
+                    print(i)
+                    print("--------------------------------------")
+                    list.append(i)
+            if len(list):
+                strings[file_path] = list
+				
 
 
 func(os.curdir)
