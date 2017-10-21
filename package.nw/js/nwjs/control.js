@@ -206,6 +206,7 @@ Control.htmlGenerate = function()
 // сперва составляем спсок скриптов
 Control.getScripts = function()
 {
+    LOG("Читаем список файлов *.js")
     fh.getFileList(Control.DATA_PATH, function(scripts)
     {
         // как только составили список скриптов - составляем список контроллов
@@ -218,8 +219,10 @@ Control.getScripts = function()
 // это необходимость из-за ассинхронно-событийной работы
 Control.getControlList = function(scriptList)
 {
+    LOG("Читайем список файлов *.xml")
     fh.getFileList(Control.DATA_PATH, function(category)
     {
+        LOG("Читаем исходный HTML")
         fs.readFile(Control.HTML_SRC, 'utf8', function(err, text)
         {
             var arduino = [];
@@ -235,18 +238,22 @@ Control.getControlList = function(scriptList)
             {
                 if(elem.toLowerCase().indexOf('arduino') > -1)
                 {
+                    LOG("Нашли модуль Arduino");
                     arduino.push(elem);
                 }
-                else if (elem.toLowerCase().indexOf('architechnica') > -1)
+                else if (elem.toLowerCase().indexOf('dronblock') > -1)
                 {
+                    LOG("Нашли модуль dronBlock");
                     architec.push(elem);
                 }
                 else
                 {
+                    LOG("Нашли модуль какой-то остальной фигни");
                     other.push(elem);
                 }
             });
 
+            LOG("Приступаем к формированию нового HTML");
             // создаём отсортированный список скриптов
             scriptList = arduino.concat(architec).concat(other);
 
@@ -280,7 +287,7 @@ Control.getControlList = function(scriptList)
                 {
                     controls_arduino += fs.readFileSync(elem, 'utf8') + '\n';
                 }
-                else if(elem.toLowerCase().indexOf('architechnica') > -1)
+                else if(elem.toLowerCase().indexOf('dronblock') > -1)
                 {
                     controls_ArT += fs.readFileSync(elem, 'utf8') + '\n';
                 }

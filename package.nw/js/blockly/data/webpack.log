@@ -145,3 +145,31 @@ Time: 10528ms
 union.min.js  85.8 kB       0  [emitted]  main
    [0] multi main 28 bytes {0} [built]
    [1] ./union.js 132 kB {0} [built]
+Hash: 7ae21462bae669f53bdc
+Version: webpack 1.14.0
+Time: 8831ms
+       Asset     Size  Chunks             Chunk Names
+union.min.js  85.8 kB       0  [emitted]  main
+   [0] multi main 28 bytes {0} [built]
+   [1] ./union.js 132 kB {0} [built]
+Hash: 7ae21462bae669f53bdc
+Version: webpack 1.14.0
+Time: 11354ms
+       Asset     Size  Chunks             Chunk Names
+union.min.js  85.8 kB       0  [emitted]  main
+   [0] multi main 28 bytes {0} [built]
+   [1] ./union.js 132 kB {0} [built]
+Hash: 7ae21462bae669f53bdc
+Version: webpack 1.14.0
+Time: 9336ms
+       Asset     Size  Chunks             Chunk Names
+union.min.js  85.8 kB       0  [emitted]  main
+   [0] multi main 28 bytes {0} [built]
+   [1] ./union.js 132 kB {0} [built]
+Hash: 7ae21462bae669f53bdc
+Version: webpack 1.14.0
+Time: 11918ms
+       Asset     Size  Chunks             Chunk Names
+union.min.js  85.8 kB       0  [emitted]  main
+   [0] multi main 28 bytes {0} [built]
+   [1] ./union.js 132 kB {0} [built]

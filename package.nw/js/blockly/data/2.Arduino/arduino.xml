@@ -1,7 +1,7 @@
 
 <category name="Arduino" colour="180">
 
-    <block type="setup_block"></block>
+    <block type="main_programm_block"></block>
 
     <block type="arduino_tone">
         <value name="freq">

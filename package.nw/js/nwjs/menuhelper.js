@@ -18,7 +18,7 @@ var HREF = {};
 
 var createMenu = function(nw, Control, console, openOption, compilerMethod, documentHref, serialportmonitorOpen)
 {
-    /*this.Control = Control;
+    this.Control = Control;
     this.nw = nw;
     this.console = console;
     this.openOption = openOption;
@@ -188,7 +188,7 @@ var createMenu = function(nw, Control, console, openOption, compilerMethod, docu
     //Получить текущее окно и подключить к нему верхнее меню
     nw.Window.get().menu = menubar;
 
-    */
+    
 };
 
 exports.createMenu = createMenu;

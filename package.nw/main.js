@@ -44,6 +44,8 @@ var HTML_getPortsList = {};
 var HTML_openOption = {};
 var HTML_saveOptions = {};
 
+var HTML_refresh = {};
+
 var HTML_lastPlatform = 'toolbox_ArT';
 
 var JSON_parce = {};
@@ -125,6 +127,9 @@ var HTML_Init = function(dialog)
 
                 }, html_object);
         };
+
+        HTML_refresh            = Control.htmlGenerate;
+
         HTML_openOption         = openOption;
         JSON_parce              = Control.JSON_parce;
         JSON_stringify          = Control.JSON_stringify;

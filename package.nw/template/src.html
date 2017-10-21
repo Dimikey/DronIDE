@@ -104,37 +104,101 @@
 
     <div id="window">
 
-        <div id="topToolbar" style="display: none;" align="center">
-        	<button type="button" class="myButton" onclick="newProject()">
-                <img src="img/toolbox_newfile.png" style="vertical-align: middle;width: 24px; height: 24px;">
-                Новый проект
-            </button>
-        	<button type="button" class="myButton" onclick="openProject()">
-                <img src="img/toolbox_openfile.png" style="vertical-align: middle;width: 24px; height: 24px;">
-                Открыть проект
-            </button>
-        	<button type="button" class="myButton" onclick="HTML_saveProject()">
-                <img src="img/toolbox_savefile.png" style="vertical-align: middle;width: 24px; height: 24px;">
-                Сохранить проект
-            </button>
-                                                            <!--HTML_compileProject()"-->
-        	<button type="button" class="myButton" onclick="run_compile()" >
-                <img src="img/toolbox_buildprogramm.png" style="vertical-align: middle;width: 24px; height: 24px;">
-                Запрограммировать
-            </button>
-
-            <button type="button" class="myButton" onclick="serialportmonitorOpen()" >
-                <img src="img/serialport.png" style="vertical-align: middle;width: 24px; height: 24px;">
-                Монитор порта
-            </button>
-
-            <button type="button" class="myButton" onclick="HTML_openOption()">
-                <img src="img/toolbox_config.png" style="vertical-align: middle;width: 24px; height: 24px;">
-                Настройки программы
-            </button>
-            <!--<button type="button" class="myButton" onclick="HTML_hideToolbox()">
-                ТЕСТ
-            </button>-->
+        <div id="topToolbar" align="left">
+			<ul class="topmenu">
+				<li>
+					<button class="myButton" id="file">
+						<img src="img/toolbox_newfile.png">
+						Файл
+					</button>
+					<ul class="submenu">
+						<li>
+							<button class="myButton" onclick="newProject()">
+								<img src="img/toolbox_newfile.png">
+								Новый проект
+							</button>						
+						</li>
+						<li>
+							<button class="myButton" onclick="openProject()">
+								<img src="img/toolbox_openfile.png">
+								Открыть проект
+							</button>						
+						</li>
+						<li>						
+							<button class="myButton" onclick="HTML_saveProject()">
+								<img src="img/toolbox_savefile.png">
+								Сохранить проект
+							</button>
+						</li>
+						<li>						
+							<button class="myButton" onclick="HTML_saveProject()">
+								<img src="img/export.png">
+								Экспортировать в blockly
+							</button>
+						</li>
+						<li>						
+							<button class="myButton" onclick="HTML_saveProject()">
+								<img src="img/export.png">
+								Экспортировать в arduino
+							</button>
+						</li>
+						<li>						
+							<button class="myButton" onclick="menuExitProgram()">
+								<img src="img/exit.png">
+								Выйти
+							</button>
+						</li>							
+					</ul>
+				</li>
+				<li>
+					<button class="myButton">
+						<img src="img/toolbox_config.png">
+						Инструменты
+					</button>
+					<ul class="submenu">
+						<li>
+							<button class="myButton" onclick="run_compile()" >
+								<img src="img/toolbox_buildprogramm.png">
+								Запрограммировать
+							</button>
+						</li>
+						<li>
+							<button class="myButton" onclick="serialportmonitorOpen()" >
+								<img src="img/serialport.png">
+								Монитор порта
+							</button>					
+						</li>
+						<li>
+							<button class="myButton" onclick="menuProgramSettings()" >
+								<img src="img/Setting.png">
+								Настройка программы
+							</button>					
+						</li>
+						<li>
+							<button class="myButton" onclick="menuBlockFactory()" >
+								<img src="img/co.png">
+								Конструктор блоков
+							</button>			
+                        </li>
+                        <li>
+							<button class="myButton" onclick="HTML_refresh()" >
+								<img src="img/co.png">
+								Refresh
+							</button>			
+                        </li>
+					</ul>
+				</li>
+				<li class="right">
+					<button class="myButton" onclick="serialportmonitorOpen()" >
+						<img src="img/serialport.png">
+					</button>					
+				</li>
+				<li class="right">
+					<button class="myButton" onclick="openProject()">
+						<img src="img/toolbox_openfile.png">
+					</button>						
+				</li>
+			</ul>
         </div>
 
         <div id="blocks_panel">
@@ -288,8 +352,8 @@
                         Набор Arduino
                     </button>
                     <button type="button" class="myButton" onclick="artProject()">
-                        <img src="img/Architechnica.jpg" style="vertical-align: middle;width: 128px; height: 128px;">
-                        Конструктор Архитехника
+                        <img src="img/dronblock.png" style="vertical-align: middle;width: 128px; height: 128px;">
+                        Конструктор ДРОН-Блок
                     </button>
                 </td>
             </tr>
@@ -435,21 +499,23 @@
         <input id="saveFile" type="file" accept="ardutech project/art,XML/xml" nwsaveas='*.art' />
 
 	</div>
-
-    <xml id="toolbox_arduino" style="display: none">
-
-        %category_IDE%
-
-        %category_arduino%
-
-    </xml>
-
-    <xml id="toolbox_ArT" style="display: none">
-
-        %category_IDE%
-
-        %category_ArT%
-    </xml>
+    
+        <xml id="toolbox_arduino" style="display: none">
+            
+            %category_IDE%
+    
+            %category_arduino%
+    
+        </xml>
+    
+        <xml id="toolbox_ArT" style="display: none">
+    
+            %category_IDE%
+    
+            %category_ArT%
+        </xml>
+        
+    <script src="js\align.js"></script>
 
 </body>
 
