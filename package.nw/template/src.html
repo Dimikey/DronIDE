@@ -2,11 +2,13 @@
 <html>
 <head>
     <meta charset="utf-8">
-   <!-- <title>Architechnica IDE - II</title> -->
+   <!-- <title>dronBlock IDE</title> -->
     <link type="text/css" rel="stylesheet"  href="style/main.css">
+    <link type="text/css" rel="stylesheet"  href="style/popup.css">
 
     <script src="js/blockly/blockly_compressed.js"></script>
     <script src="js/blockly/msg/js/ru.js"></script>
+    <script src="js/align.js"></script>
 
     <script type="text/javascript" src="js/ace/ace.js"  charset="utf-8"></script>
 
@@ -16,6 +18,8 @@
     <script src="serverreq.js"></script>
 
     %script%
+
+    <script src="./serialport/jquery-2.1.4.min.js"></script>
 
     <script>
         // метод необхзоидм для отработки ДОЛГОЙ загрузки главного окна программы
@@ -41,6 +45,8 @@
                     $('#stop-connection').click();
 
                 });
+
+            MenuAligin();
 
             // запускаем инициализацию рабочей области в соответствии с выбранной платформой
             // по сути разница только в элементе toolbox
@@ -95,7 +101,25 @@
             HTML_openProject();
         }
 
-</script>
+        /* 	
+			Методы, дёграемые HTML менюшкой
+			(заменила меню, предоставляемое операционной системой)
+		*/
+		
+		function menuProgramSettings() {
+
+			openOption();
+		}
+
+		function menuBlockFactory() {
+
+            window.open('./factory/factory.html', '_blank')
+		}
+
+		function menuExitProgram() {
+
+			nw.App.quit();
+		} 
 
     </script>
 </head>
@@ -105,23 +129,21 @@
     <div id="window">
 
         <div id="topToolbar" align="left">
-			<ul class="topmenu">
+        <!--<div id="topToolbar" style="display: none;" align="center">-->
+        	<ul class="topmenu">
 				<li>
-					<button class="myButton" id="file">
+					<button class="myButton" id="FILE">
 						<img src="img/toolbox_newfile.png">
-						Файл
 					</button>
 					<ul class="submenu">
 						<li>
-							<button class="myButton" onclick="newProject()">
+							<button class="myButton" onclick="newProject()" id="NEW_PROJECT">
 								<img src="img/toolbox_newfile.png">
-								Новый проект
 							</button>						
 						</li>
 						<li>
-							<button class="myButton" onclick="openProject()">
+							<button class="myButton" onclick="openProject()" id="OPEN_PROJECT">
 								<img src="img/toolbox_openfile.png">
-								Открыть проект
 							</button>						
 						</li>
 						<li>						
@@ -353,7 +375,7 @@
                     </button>
                     <button type="button" class="myButton" onclick="artProject()">
                         <img src="img/dronblock.png" style="vertical-align: middle;width: 128px; height: 128px;">
-                        Конструктор ДРОН-Блок
+                        Набор ДРОН-Блок
                     </button>
                 </td>
             </tr>
@@ -425,7 +447,7 @@
                 </td>
                 <td>
                     <select id="board_select">
-                        <option value="art10">Архитехника v1.0</option>
+                        <option value="art10">ДРОН-Блок</option>
                         <option value="nano328">Arduino Nano (328)</option>
                         <option value="UNO">Arduino UNO</option>
                     </select>
@@ -499,23 +521,23 @@
         <input id="saveFile" type="file" accept="ardutech project/art,XML/xml" nwsaveas='*.art' />
 
 	</div>
+
+    <xml id="toolbox_arduino" style="display: none">
+
+        %category_IDE%
+
+        %category_arduino%
+
+    </xml>
+
+    <xml id="toolbox_ArT" style="display: none">
+
+        %category_IDE%
+
+        %category_ArT%
+    </xml>
     
-        <xml id="toolbox_arduino" style="display: none">
-            
-            %category_IDE%
-    
-            %category_arduino%
-    
-        </xml>
-    
-        <xml id="toolbox_ArT" style="display: none">
-    
-            %category_IDE%
-    
-            %category_ArT%
-        </xml>
-        
-    <script src="js\align.js"></script>
+    <script src="js\lang.js"></script>
 
 </body>
 

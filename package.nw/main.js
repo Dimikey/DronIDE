@@ -136,7 +136,7 @@ var HTML_Init = function(dialog)
 
 
         // инициализируем меню
-        console.log('Создаю меню для NWJS');
+        /*console.log('Создаю меню для NWJS');
         Menu.createMenu(
                             nw, 
                             Control, 
@@ -146,7 +146,7 @@ var HTML_Init = function(dialog)
                             document.location.href,
                             serialportmonitorOpen);
         console.log('OK');
-
+*/
         HTML_readOptions();
 
         console.log(OPTIONS);

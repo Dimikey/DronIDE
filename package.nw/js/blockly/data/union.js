@@ -2476,14 +2476,22 @@ Blockly.Blocks['artboard'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Начало программы для набора dronBlock")
-        .appendField(new Blockly.FieldDropdown(
+        /*.appendField(new Blockly.FieldDropdown(
 			[
 				["v1.0", "0"],
 				["v1.5", "1"],
 				["v2.0", "2"]
 
-			]), "artboards");
-	this.setNextStatement(true, null);
+            ]), "artboards")*/;
+    this.appendDummyInput()
+        .appendField("Инициализация");
+    this.appendStatementInput("setup")
+        .setCheck(null);
+    this.appendDummyInput()
+        .appendField("Действия");
+    this.appendStatementInput("loop")
+        .setCheck(null);
+	this.setNextStatement(false, null);
     this.setColour(20);
     this.setTooltip('Данный модуль обязателен для корректной работы программы.\nБез него прграмма может работать некорректно.\nдля начала работы установите модуль на форму и выбирите комплект, с которым желаете работать.');
     this.setHelpUrl('https://blockly-demo.appspot.com/static/demos/blockfactory/index.html#8ydgd6');
@@ -2495,7 +2503,10 @@ Blockly.Blocks['artboard'] = {
 
 // головной модуль определения версии платы Ардутека
 Blockly.Arduino['artboard'] = function(block) {
-	var dropdown_artboards = this.getFieldValue('artboards');
+    var dropdown_artboards = this.getFieldValue('artboards');
+    var statements_setup = Blockly.Arduino.statementToCode(block, 'setup');
+    var statements_loop = Blockly.Arduino.statementToCode(block, 'loop');
+
 	var board_define = '';
 	// #include
 	switch(dropdown_artboards)
@@ -2503,7 +2514,7 @@ Blockly.Arduino['artboard'] = function(block) {
 		// добавляем библиотеки для ардутека
 		case '0': case '1': case '2':
 		{
-			board_define += '// Работаем с конструктором Architechnic\n';
+			board_define += '// Работаем с конструктором ДРОН-Блок\n';
 			//Blockly.Arduino.definitions_['define_ardutech'] 		= '#include "architechnic001.h"';
 		}break;
 
@@ -2521,10 +2532,10 @@ Blockly.Arduino['artboard'] = function(block) {
 
 	// void setup()
 	//  Blockly.Arduino.setups_['setup_motor_'+dropdown_ports] = 'ArTMotorDriver motor_%0(%0);'.replace(/%0/g, dropdown_ports);
-
+    Blockly.Arduino.setups_['setup_block'] = statements_setup;
 	// void loop()
 	var code = '';
-	return code;
+	return statements_loop;
 };
 
 Blockly.Blocks['artflame_sence'] = {

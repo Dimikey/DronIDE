@@ -9,7 +9,7 @@ osLocale().then(lang => {
 	target = JSON.parse(fs.readFileSync("js/" + lang + '.json', 'utf8'));
 	//target = {"FILE": "Файл", "NEW_PROJECT": "Новый проект"};
 	$.each(target, function(key, value){
-		sel = $("#" + key);
+        var sel = $("#" + key);
 		sel.append(value);
 		console.log(sel);
 		console.log(key + " " +value);

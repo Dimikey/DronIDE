@@ -1,10 +1,8 @@
-<category name="DRON" colour="20">
+<category name="ДРОН-Блок" colour="20">
     <block type="artboard"></block>
 
     <block type="art_system_led"></block>
 
-    <block type="setup_block"></block>
-    
     <block type="arduino_serial_print">
         <value name="CONTENT">
             <block type="text">
